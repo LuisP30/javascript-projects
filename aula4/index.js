@@ -1,6 +1,6 @@
 let nome = 'João';
 let nomeCliente; // Declarei uma variável sem atribuir valor a ela
-// Em casos de nomes compostos para variável utilizamos camelCase
+// Em casos de nomes compostos para variável utilizamos camelCase. Ex.: nomeCliente
 
 console.log(nome, 'nasceu em 1984')
 console.log('Em 2000', nome, 'conheceu Maria')
