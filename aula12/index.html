@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>Exercícios</title>
+</head>
+<body>
+    <div class="container">
+        <script>
+            const nome = prompt('Digite o seu nome:')
+            document.body.innerHTML += `O seu nome é: ${nome} <br>`
+            document.body.innerHTML += `O seu nome tem: ${nome.length} letras <br>`
+            document.body.innerHTML += `A segunda letra do seu nome é: ${nome[1].toLocaleUpperCase()} <br>`
+            document.body.innerHTML += `O primeiro índice da letra 'i' no seu nome é: ${nome.indexOf('i')} <br>`
+            document.body.innerHTML += `O último índice da letra 'i' no seu nome é: ${nome.lastIndexOf('i')} <br>`
+            document.body.innerHTML += `As três últimas letras do seu nome são: ${nome.slice(-3).toLocaleUpperCase().split('')} <br>`
+            document.body.innerHTML += `As palavras do seu nome são: ${nome.split(' ')} <br>`
+            document.body.innerHTML += `Seu nome com letras maiúsculas: ${nome.toUpperCase()} <br>`
+            document.body.innerHTML += `Seu nome com letras minúsculas: ${nome.toLowerCase()} <br>`
+
+        </script>
+    </div>
+</body>
+</html>

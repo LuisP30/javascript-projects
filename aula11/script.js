@@ -18,6 +18,6 @@ console.log(umaString.slice(4, 9)) // Também posso utilizar apenas um argumento
 // Separando as palavras da string a partir dos espaços (as palavras ficaram em um array).
 console.log(umaString.split(' '))
 // Toda minúscula:
-console.log(umaString.toLocaleLowerCase())
+console.log(umaString.toLowerCase())
 // Toda maiúscula:
-console.log(umaString.toLocaleUpperCase())
+console.log(umaString.toUpperCase())
