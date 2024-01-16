@@ -1,3 +1,4 @@
+// BÁSICO SOBRE FUNÇÕES
 // Definindo uma função que concatena o valor recebido de argumento com uma frase
 function saudacao(nome){
    return `Bom dia ${nome}`
