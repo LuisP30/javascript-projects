@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculando IMC</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+      <!--Abaixo há um container que abriga uma div com lista do IMC (imc) e uma div
+    com lista de possíveis resultados (resultados)-->
+    <h1>Tabela IMC</h1>
+    <div class="container-info">
+        <div class="imc">
+            <ul>
+                <b><li>IMC</li></b>
+                <li>Menos do que 18,5</li>
+                <li>Entre 18,5 e 24,9</li>
+                <li>Entre 25 e 29,9</li>
+                <li>Entre 30 e 34,9</li>
+                <li>Entre 35 e 39,9</li>
+                <li>Mais do que 40</li>
+            </ul>
+        </div>
+        <div class="resultados">
+            <ul>
+                <b><li>Resultado</li></b>
+                <li>Abaixo do peso</li>
+                <li>Peso normal</li>
+                <li>Sobrepeso</li>
+                <li>Obesidade grau 1</li>
+                <li>Obesidade grau 2</li>
+                <li>Obesidade grau 3</li>
+            </ul>
+        </div>
+    </div>
+    <!--Abaixo encontra-se o formulário ao qual o usuário irá
+    informar peso e altura-->
+    <h1>Calcule seu IMC</h1>
+    <form action="" class="form">
+      <label for="peso">Peso:</label>
+      <input type="text" class="peso">
+
+      <label for="altura">Altura (em metros):</label>
+      <input type="text" class="altura">
+
+      <button>Enviar</button>
+    </form>
+    <div class="avisos">
+        <div class="resultado"></div>
+        <div class="peso-invalido"></div>
+        <div class="altura-invalida"></div>
+    </div>
+  </section>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
