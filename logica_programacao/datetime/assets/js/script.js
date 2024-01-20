@@ -9,27 +9,14 @@ function meuEscopo(){
     containerData.appendChild(paragrafo);
     // Criando uma função para capturar o dia da semana da data recebida
     function retornaDia(data){
-        let diaSemana;
-        switch(data){
-            case 0: diaSemana = 'Domingo';
-            return diaSemana
-            case 1: diaSemana = 'Segunda-Feira';
-            return diaSemana
-            case 2: diaSemana = 'Terça-Feira';
-            return diaSemana
-            case 3: diaSemana = 'Quarta-Feira';
-            return diaSemana
-            case 4: diaSemana = 'Quinta-Feira';
-            return diaSemana
-            case 5: diaSemana = 'Sexta-Feira';
-            return diaSemana
-            case 6: diaSemana = 'Sábado';
-            return diaSemana
-        }
+        // Utilizando um array não é necessário fazer um switch case
+        let diaSemana = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado']
+        return diaSemana[data];
     }
     // Criando uma função capturar o mês da data
     function retornaMes(data){
         let mes;
+        // Poderia utilizar um array que pega o elemento na posição data como feito na função acima
         switch(data){
             case 0: mes = 'Janeiro';
             return mes
@@ -67,3 +54,21 @@ function meuEscopo(){
     paragrafoTempo.innerHTML = `${retornaDia(data.getDay())}, ${data.getDate()} de ${retornaMes(data.getMonth())} de ${data.getFullYear()} <br> ${zeroEsquerda(data.getHours())}:${zeroEsquerda(data.getMinutes())}`
 }
 meuEscopo()
+
+// // Maneira mais simples de resolver esse exercício:
+// // Criando um parágrafo
+// const paragrafo = document.createElement('p');
+// // Atribuindo uma classe a este parágrafo
+// paragrafo.classList.add('tempo');
+// // Selecionando um elemento através da classe criado no HTML
+// const containerData = document.querySelector('.container-tempo');
+// // Adicionando o parágrafo que criei no JavaScript ao elemento crido no HTML (com classe container-tempo)
+// containerData.appendChild(paragrafo);
+
+// const paragrafoTempo = document.querySelector('.tempo')
+// const data = new Date();
+// const opcoes = {
+//     dateStyle: 'full',
+//     timeStyle: 'short',
+// };
+// paragrafoTempo.innerHTML = data.toLocaleString('pt-BR', opcoes)
