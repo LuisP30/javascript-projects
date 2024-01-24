@@ -15,7 +15,8 @@ function meuEscopo(){
         // Criando um elemento com a tag correspondente que o atributo do objeto possui
         const criaElemento = document.createElement(`${elemento}`)
         // Colocando o conteúdo correspondente do objeto dentro do elemento criado anteriormente
-        criaElemento.innerHTML = conteudo
+        criaElemento.innerHTML = conteudo /* Você também pode adicionar texto em um elemento com
+        a função createTextNode() - Passa o texto ou variável como parâmetro */
         // Adicionando o meu elemento já com conteúdo a minha seção container
         sectionContainer.appendChild(criaElemento)
 
