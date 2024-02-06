@@ -52,15 +52,21 @@ ContaPoupanca.prototype.constructor = ContaPoupanca
 // Conta corrente tem limite e não permite um saque maior que o saldo e valor juntos
 // Conta corrente eu posso sacar um valor maior que meu saldo
 const cc = new ContaCorrente(11, 22, 0, 100)
+// Deposito 10
 cc.depositar(10)
+// Tento sacar 110 e consigo pois meu limite junto do meu saldo permite essa operação
 cc.sacar(110)
+// Tento sacar 1 e sou impedido pois o limite junto do meu saldo foi excedido
 cc.sacar(1)
 console.log()
 // Criando conta poupança
 // Conta poupança não tem limite e não permite um saque maior que o saldo
 const cp = new ContaPoupanca(11, 22, 0)
+// Deposito 10
 cp.depositar(10)
+// Tento sacar 110 e serei impedido
 cp.sacar(110)
+// Saco 1 e terei 9 como saldo
 cp.sacar(1)
 // Note a diferença de valores obtidos
 
