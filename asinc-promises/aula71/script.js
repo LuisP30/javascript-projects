@@ -20,10 +20,8 @@ espera('Buscando dados no BD', aleatorio(1000, 3000)).then(resposta => { // then
         })
     })
 }).catch(e => {console.log('Erro!', e)}) /* Eu fiz minha promise rejeitar valor diferente de string.
-Mesmo que o meu primeiro then() e nem o segundo possuiam erros, Os métodos then() serão executados até
-terminarem ou caso surja um erro em algum deles, assim serão rejeitados e o código irá para o método catch
- No catch acima printei uma mensagem de erro e o erro em si que escrevi no reject. */
- 
+Os métodos then são executados até que seja encontrado um erro, assim o código é desviado ao catch
+No caso acima printei uma mensagem de erro e o erro em si que escrevi. */
 // resolve: then é executado quando resolvo minha promise
 // reject: catch é executado que vai capturar o erro
 
