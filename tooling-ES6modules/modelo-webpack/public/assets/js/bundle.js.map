@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAA,IAAMA,IAAI,GAAG,MAAM,C","sources":["webpack://aula78/./src/index.js"],"sourcesContent":["const nome = 'Luis'"],"names":["nome"],"sourceRoot":""}
