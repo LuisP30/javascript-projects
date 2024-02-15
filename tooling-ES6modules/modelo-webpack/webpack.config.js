@@ -32,6 +32,9 @@ module.exports = {
                     presets: ['@babel/env']
                 }
             }
+        }, {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
     },
     // Especifica o tipo de mapeamento de origem a ser usado
