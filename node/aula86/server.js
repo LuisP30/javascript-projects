@@ -1,4 +1,4 @@
-// Importando o módulo express
+// Importando o módulo express (para usar o nodemon: npx nodemon server.js)
 const express = require('express')
 
 // Inicializando o aplicativo Express
@@ -6,7 +6,16 @@ const app = express()
 
 // Definindo uma rota para a página inicial do site
 app.get('/', (request, response) => {
-    response.send('Hello') // Envia a resposta "Hello" para o cliente quando acessa a rota raiz ('/')
+    response.send(`
+        <form action="/" method="post">
+            Nome: <input type="text" /> 
+            <input type="submit" /> 
+        </form>`)
+        // Envia a resposta "Hello" para o cliente quando acessa a rota raiz ('/')
+})
+
+app.post('/', (request, response) => {
+    response.send(`Recebi seu formulário`)
 })
 
 // Definindo uma rota para a página de contato
