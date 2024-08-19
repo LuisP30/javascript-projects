@@ -1,3 +1,4 @@
+// Nesse arquivo crio as respostas para se a requisição for GET ou POST
 exports.paginaInicial = (req, res) => {
     res.render('index')
 }
