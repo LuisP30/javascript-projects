@@ -1,0 +1,24 @@
+<%- include('includes/head') %> <!-- Utilizando o include (semelhante ao do Django) -->
+
+  <section class="container">
+    <% if (typeof title !== 'undefined') { %>
+      <h1><%= title %></h1> <!-- Acessando valores passados pelo controller -->
+      <!-- Eu poderia usar um sinal de subtração (-) ao invés de igual (=) caso eu queira renderizar tags HTML -->
+    <% } %>
+    <% for( i of numeros ) { %>
+      <p>Números: <%= i %></p>
+    <% } %>
+    <p>Valor da variável no middleware global: <b><%=umaVariavelLocal  %></b></p>
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="">
+      <input type="submit" value="Enviar">
+    </form>
+    <!-- Acessando os números de outra forma -->
+     <% numeros.forEach(num => { %>
+        <%= num %> <br>
+     <% }) %>
+  </section>
+
+<%- include('includes/footer') %>
