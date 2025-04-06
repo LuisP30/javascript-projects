@@ -24,6 +24,7 @@ app.use(helmet())
 
 
 app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'public')))
 
 // Sessões
@@ -48,6 +49,7 @@ const csrf = require('csurf')
 app.use(csrf())
 // Middlewares
 const { middlewareGlobal, middlewareChecaErroCSRF, middlewareCSRFToken } = require('./src/middlewares/middleware')
+const exp = require('constants')
 app.use(middlewareGlobal) // Quando não passo a rota, ele fica disponível em todas as rotas
 app.use(middlewareChecaErroCSRF)
 app.use(middlewareCSRFToken)
