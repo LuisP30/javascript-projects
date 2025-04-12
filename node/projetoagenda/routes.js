@@ -12,12 +12,13 @@ function meuMiddleware(req, res, next){
 
 route.get('/', meuMiddleware, homeController.index, /* Aqui é outro middleware -> */ (req, res) => {
     console.log('Middleware para depois da requisição tratada')
-    console.log(req.session)
 })
 
 // Rotas de login
 route.get('/login', loginController.login)
+route.post('/login', loginController.loginPost)
 route.post('/cadastro', loginController.cadastro)
+route.get('/logout', loginController.logout)
 
 module.exports = route
 

@@ -48,11 +48,11 @@ app.set('view engine', 'ejs')
 const csrf = require('csurf')
 app.use(csrf())
 // Middlewares
-const { middlewareGlobal, middlewareChecaErroCSRF, middlewareCSRFToken } = require('./src/middlewares/middleware')
+const { middlewareCSRFToken, middlewareGlobal, middlewareChecaErroCSRF } = require('./src/middlewares/middleware')
 const exp = require('constants')
+app.use(middlewareCSRFToken)
 app.use(middlewareGlobal) // Quando não passo a rota, ele fica disponível em todas as rotas
 app.use(middlewareChecaErroCSRF)
-app.use(middlewareCSRFToken)
 
 
 app.use(routes)
