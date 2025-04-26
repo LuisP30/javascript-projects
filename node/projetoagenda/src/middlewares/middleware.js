@@ -20,3 +20,8 @@ exports.middlewareCSRFToken = (req, res, next) => {
     res.locals.csrfToken = req.csrfToken()
     next()
 }
+
+exports.loginRequired = (req, res, next) => {
+    if(!res.locals.user) return res.redirect('login')
+    next()
+}

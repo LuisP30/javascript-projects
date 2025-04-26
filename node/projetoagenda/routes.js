@@ -1,6 +1,8 @@
 const express = require('express')
 const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
+const contatoController = require('./src/controllers/contatoController')
+const { loginRequired } = require('./src/middlewares/middleware')
 const route = express.Router()
 
 function meuMiddleware(req, res, next){
@@ -19,6 +21,12 @@ route.get('/login', loginController.login)
 route.post('/login', loginController.loginPost)
 route.post('/cadastro', loginController.cadastro)
 route.get('/logout', loginController.logout)
+
+// Rotas de contato
+route.get('/contato', loginRequired, contatoController.contato)
+route.post('/contato/edit', loginRequired, contatoController.create)
+// Recebendo o id como parâmetro na URL
+route.get('/contato/:id', loginRequired, contatoController.profile)
 
 module.exports = route
 
