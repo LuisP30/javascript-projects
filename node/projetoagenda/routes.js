@@ -6,14 +6,14 @@ const { loginRequired } = require('./src/middlewares/middleware')
 const route = express.Router()
 
 function meuMiddleware(req, res, next){
-    console.log('Middleware que recebe a requisição primeiro')
+    // console.log('Middleware que recebe a requisição primeiro')
     next() // next é utilizado para chamar o próximo middleware
 }
 
 // Rotas da página inicial
 
 route.get('/', meuMiddleware, homeController.index, /* Aqui é outro middleware -> */ (req, res) => {
-    console.log('Middleware para depois da requisição tratada')
+    // console.log('Middleware para depois da requisição tratada')
 })
 
 // Rotas de login
@@ -27,6 +27,8 @@ route.get('/contato', loginRequired, contatoController.contato)
 route.post('/contato/edit', loginRequired, contatoController.create)
 // Recebendo o id como parâmetro na URL
 route.get('/contato/:id', loginRequired, contatoController.profile)
+route.post('/contato/:id', loginRequired, contatoController.update)
+route.get('/contato/delete/:id', loginRequired, contatoController.delete)
 
 module.exports = route
 

@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (req, res, next) => {
-    console.log('Middleware global')
+    // console.log('Middleware global')
     res.locals.errors = req.flash('errors')
     res.locals.success = req.flash('success')
     res.locals.user = req.session.user
@@ -7,7 +7,7 @@ exports.middlewareGlobal = (req, res, next) => {
 }
 
 exports.middlewareChecaErroCSRF = (err, req, res, next) => {
-    console.log('Middleware para verificar erros de CSRF Token')
+    // console.log('Middleware para verificar erros de CSRF Token')
     if(err){
         console.log(err)
         return res.send('Erro de CSRF Token')
@@ -16,12 +16,12 @@ exports.middlewareChecaErroCSRF = (err, req, res, next) => {
 }
 
 exports.middlewareCSRFToken = (req, res, next) => {
-    console.log('Middleware para enviar CSRF Token para as páginas')
+    // console.log('Middleware para enviar CSRF Token para as páginas')
     res.locals.csrfToken = req.csrfToken()
     next()
 }
 
 exports.loginRequired = (req, res, next) => {
-    if(!res.locals.user) return res.redirect('login')
+    if(!res.locals.user) return res.redirect('/login')
     next()
 }

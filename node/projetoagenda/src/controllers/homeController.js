@@ -1,7 +1,9 @@
-exports.index = (req, res, next) => {
-    // criando flash messages:
-    // req.flash('info', 'Criando mensagem do tipo info')
-    res.render('index')
-    console.log('Middleware que trata a requisição')
+const contato = require('../models/ContatoModel')
+
+exports.index = async (req, res, next) => {
+    const listaContatos = await contato.searchContatos()
+    console.log(listaContatos)
+    res.render('index', { listaContatos })
+    // console.log('Middleware que trata a requisição')
     next()
 }

@@ -21,7 +21,15 @@ const flash = require('connect-flash')
 // Helmet
 const helmet = require('helmet')
 app.use(helmet())
-
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
+      workerSrc: ["'self'", "blob:"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  }));
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
