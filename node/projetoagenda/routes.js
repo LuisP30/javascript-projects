@@ -2,6 +2,7 @@ const express = require('express')
 const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
 const contatoController = require('./src/controllers/contatoController')
+const myPageController = require('./src/controllers/myPageController')
 const { loginRequired } = require('./src/middlewares/middleware')
 const route = express.Router()
 
@@ -29,6 +30,9 @@ route.post('/contato/edit', loginRequired, contatoController.create)
 route.get('/contato/:id', loginRequired, contatoController.profile)
 route.post('/contato/:id', loginRequired, contatoController.update)
 route.get('/contato/delete/:id', loginRequired, contatoController.delete)
+
+// Novas rotas
+route.get('/mypage', loginRequired, myPageController.myPage)
 
 module.exports = route
 
