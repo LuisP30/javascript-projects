@@ -24,6 +24,7 @@ route.post('/cadastro', loginController.cadastro)
 route.get('/logout', loginController.logout)
 
 
+
 // Rotas de contato
 route.get('/contato', loginRequired, contatoController.contato)
 route.post('/contato/edit', loginRequired, contatoController.create)
