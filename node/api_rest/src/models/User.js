@@ -46,8 +46,10 @@ export default class User extends Model {
     })
 
     this.addHook('beforeSave', async user => {
-      user.password_hash = await bcrypt.hash(user.password, 8);
-      // 8 é a quantidade de vezes que a senha será criptografada
+      if(user.password){
+        user.password_hash = await bcrypt.hash(user.password, 8);
+        // 8 é a quantidade de vezes que a senha será criptografada
+      }
     });
 
     return this;
