@@ -1,11 +1,12 @@
 import multer from "multer";
 import multerConfig from "../config/multer";
+import Foto from "../models/Foto";
 
 const upload = multer(multerConfig).single('image')
 
 class FotoController{
-  async store(req, res){
-    return upload(req, res, (error) => {
+  store(req, res){
+    return upload(req, res, async (error) => {
       if(error){
         return  res.status(401).json({
           errors: [error.code]
@@ -16,8 +17,12 @@ class FotoController{
         errors: ['É necessário enviar um arquivo de imagem. (JPG, JPEG ou PNG)']
       })
 
-      return res.json(req.file)
+      const { originalname, filename } = req.file
+      const { aluno_id } = req.body
+      const foto = await Foto.create({ originalname, filename, aluno_id })
 
+      return res.json(foto)
+4
     })
   }
 }
